@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+venv/
+env/
+.vscode/
+.idea/
+*.swp
+
+# Exclude screening tool data
+cochrane-ai-screening/data/input/
+cochrane-ai-screening/data/output/
+cochrane-ai-screening/export_from_covidence/

@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cochrane-screening"
+version = "0.1.0"
+description = "AI-assisted systematic review screening tool"
+readme = "README.md"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+keywords = ["systematic-review", "screening", "cochrane", "ai", "research"]
+requires-python = ">=3.9"
+dependencies = [
+    "rispy>=0.8.0",
+    "pandas>=1.5.0",
+    "numpy>=1.23.0",
+    "PyYAML>=6.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "scikit-learn>=1.3.0",
+    "openpyxl>=3.1.0",
+    "chardet>=5.2.0",
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+    "pre-commit>=3.0",
+    "jupyter>=1.0",
+    "ipykernel>=6.0",
+]
+docs = [
+    "mkdocs>=1.5",
+    "mkdocs-material>=9.0",
+    "mkdocstrings[python]>=0.20",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/cochrane-ai-screening"
+Repository = "https://github.com/yourusername/cochrane-ai-screening"
+Issues = "https://github.com/yourusername/cochrane-ai-screening/issues"
+
+[project.scripts]
+cochrane-screen = "cochrane_screening.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["cochrane_screening*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--strict-markers",
+    "--strict-config",
+    "--cov=src/cochrane_screening",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]

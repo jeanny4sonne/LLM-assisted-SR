@@ -1,0 +1,330 @@
+# Default Configuration Template
+# Copy this file and modify for new systematic reviews
+
+review_name: "Systematic Review Screening"
+
+# Inclusion Criteria
+inclusion:
+  population:
+    terms: []  # Add population terms
+    logic: "any"  # Options: any, all, at_least_n
+    
+  intervention:
+    terms: []  # Add intervention terms
+    comparator_required: false  # Whether comparator is required
+    min_interventions: 1  # Minimum number of interventions to match
+    logic: "any"
+    
+  study_design:
+    terms: []  # Add study design terms
+    logic: "any"
+    
+  # Additional inclusion rules
+  require_abstract: true
+  require_full_text: false
+  language_filter: ["english"]  # Empty list for all languages
+  publication_years:
+    start: 2000
+    end: 2024
+
+# Exclusion Criteria
+exclusion:
+  population:
+    terms: []  # Add population exclusion terms
+    logic: "any"
+    
+  intervention:
+    terms: []  # Add intervention exclusion terms
+    logic: "any"
+    
+  study_design:
+    terms: []  # Add study design exclusion terms
+    logic: "any"
+    
+  # Additional exclusion categories
+  outcome:
+    terms: []  # Outcome-based exclusions
+    logic: "any"
+    
+  publication_type:
+    terms:  # Publication types to exclude
+      - "editorial"
+      - "letter"
+      - "comment"
+      - "news"
+      - "retracted publication"
+    logic: "any"
+    
+  exclusion_logic: "any"  # Options: any, count, all
+  exclusion_threshold: 1  # For count logic: exclude if >= N criteria met
+
+# Duration Requirements
+duration:
+  minimum_days: 180  # Minimum follow-up duration in days
+  convert_weeks_to_days: true
+  convert_months_to_days: true
+  
+  long_term_indicators:  # Terms indicating sufficient duration
+    - "24 weeks"
+    - "26 weeks"
+    - "52 weeks"
+    - "6 months"
+    - "12 months"
+    - "1 year"
+    - "2 years"
+    
+  short_term_indicators:  # Terms indicating insufficient duration
+    - "short-term"
+    - "acute"
+    - "pharmacokinetic"
+    - "pharmacodynamic"
+    - "minutes"
+    - "hour"
+    - "days"
+    - "1 week"
+    - "2 weeks"
+    - "4 weeks"
+    - "8 weeks"
+    - "12 weeks"
+    
+  # Duration extraction patterns
+  patterns:
+    days: r'(\d+)\s*days?'
+    weeks: r'(\d+)\s*weeks?'
+    months: r'(\d+)\s*months?'
+    years: r'(\d+)\s*years?'
+
+# Text Processing
+text_processing:
+  case_sensitive: false
+  match_whole_words: false
+  use_regex: false
+  remove_punctuation: true
+  expand_abbreviations: true
+  
+  # Common abbreviations to expand
+  abbreviations:
+    "rct": "randomized controlled trial"
+    "t1d": "type 1 diabetes"
+    "t2d": "type 2 diabetes"
+    "bmi": "body mass index"
+    "glp-1": "glucagon-like peptide-1"
+    
+  # Stop words to ignore (optional)
+  stop_words: []
+  
+  # Text cleaning
+  remove_html: true
+  remove_special_characters: true
+  normalize_whitespace: true
+
+# Screening Rules
+rules:
+  # Decision thresholds
+  confidence_threshold: 0.7  # For ML-based screening
+  require_multiple_reviewers: false
+  
+  # Intervention matching
+  require_direct_comparison: false
+  allow_indirect_comparison: true
+  
+  # Population matching
+  require_exact_population_match: false
+  allow_similar_populations: true
+  
+  # Study design
+  require_prospective: false
+  allow_retrospective: true
+  
+  # Additional checks
+  check_sample_size: false
+  minimum_sample_size: 10
+  check_follow_up_rate: false
+  minimum_follow_up_rate: 80
+  check_randomization: false
+  
+  # Conflict resolution
+  resolve_conflicts_by: "senior_reviewer"  # Options: senior_reviewer, consensus, third_reviewer
+
+# Output Configuration
+output:
+  # File formats
+  save_ris_by_category: true
+  save_comprehensive_csv: true
+  save_excel: false
+  save_json: true
+  generate_summary: true
+  
+  # Content options
+  include_metadata: true
+  include_abstract: true
+  include_keywords: true
+  include_full_text_link: false
+  include_screening_history: true
+  
+  # File options
+  encoding: "utf-8"
+  delimiter: ","
+  date_format: "%Y-%m-%d"
+  compress_output: false
+  
+  # Output structure
+  create_subdirectories: true
+  subdirectory_structure: "categorical"  # Options: categorical, flat, dated
+  
+  # Columns to include in CSV
+  columns:
+    - "Title"
+    - "Authors"
+    - "Abstract"
+    - "Published_Year"
+    - "Journal"
+    - "DOI"
+    - "Accession_Number"
+    - "PMID"
+    - "Decision"
+    - "Reason"
+    - "Screening_Date"
+    - "Reviewer"
+    - "Notes"
+
+# Performance Evaluation
+performance:
+  # Matching strategy
+  matching_strategy: "accession_doi"  # Options: accession_doi, doi_only, accession_only, title_author_year
+  
+  # Gold standard
+  gold_standard: "covidence"  # Options: covidence, manual, consensus, expert
+  
+  # Decision handling
+  treat_maybe_as: "positive"  # Options: positive, negative, exclude, separate
+  
+  # Metrics to calculate
+  metrics:
+    sensitivity: true
+    specificity: true
+    precision: true
+    recall: true  # Same as sensitivity
+    f1_score: true
+    accuracy: true
+    cohens_kappa: true
+    youdens_j: true
+    roc_auc: false
+    
+  # Statistical tests
+  statistical_tests:
+    calculate_confidence_intervals: true
+    confidence_level: 0.95
+    method: "exact"  # Options: exact, normal, wilson
+    
+  # Visualization
+  visualization:
+    generate_plots: true
+    plot_style: "seaborn"
+    color_palette: "Set2"
+    figsize: [10, 8]
+    dpi: 300
+    
+  # Report generation
+  report:
+    generate_html: false
+    generate_pdf: false
+    generate_markdown: true
+    include_confusion_matrix: true
+    include_metrics_table: true
+    include_recommendations: true
+
+# Logging and Debugging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "logs/screening.log"
+  max_file_size: 10485760  # 10MB
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Performance logging
+  log_performance: true
+  log_decisions: false  # Careful: can be large
+  log_errors: true
+  
+  # Console output
+  console_output: true
+  verbose: false
+
+# Advanced Options
+advanced:
+  # Parallel processing
+  use_multiprocessing: false
+  max_workers: 4
+  
+  # Caching
+  enable_caching: true
+  cache_directory: ".cache"
+  cache_expiry_days: 7
+  
+  # Validation
+  validate_input: true
+  validate_output: true
+  strict_validation: false
+  
+  # Custom functions
+  custom_screening_function: null
+  custom_matching_function: null
+  custom_output_function: null
+  
+  # API integration (if needed)
+  api_keys: {}
+  api_endpoints: {}
+  rate_limit: 10  # requests per second
+
+# Metadata
+metadata:
+  review_type: "intervention"  # intervention, diagnostic, prognosis, etiology
+  pico:
+    population: ""
+    intervention: ""
+    comparator: ""
+    outcome: ""
+  protocol:
+    id: ""
+    url: ""
+    registration_date: ""
+  team:
+    reviewers: []
+    statistician: ""
+    librarian: ""
+  timeline:
+    start_date: ""
+    end_date: ""
+    screening_completed: ""
+  version_control:
+    config_version: "1.0"
+    last_updated: ""
+    changelog: ""
+
+# Notes
+notes: |
+  # Configuration Notes
+  
+  ## How to Use This Template:
+  1. Copy this file to config/your_review_name.yaml
+  2. Modify the inclusion and exclusion terms for your review
+  3. Adjust duration requirements if needed
+  4. Set output preferences
+  5. Run screening with: python scripts/run_screening.py --config config/your_review_name.yaml
+  
+  ## Tips:
+  - Use specific terms rather than general ones
+  - Include synonyms and variations
+  - Test with sample data first
+  - Review output files for accuracy
+  
+  ## Common Patterns:
+  - Population: disease names, demographic terms
+  - Intervention: drug names, procedure names, device names
+  - Study design: study type terms, methodology terms
+  
+  ## Troubleshooting:
+  - If screening is too slow: reduce number of terms
+  - If missing studies: add more synonyms
+  - If too many false positives: add exclusion terms

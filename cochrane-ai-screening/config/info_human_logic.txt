@@ -1,0 +1,17 @@
+Key Differences Between Configs:
+
+Insulin Config:
+
+Requires ≥2 interventions (comparator study)
+Excludes if ≥2 exclusion criteria met
+Type 1 diabetes focus
+GLP-1 Config:
+
+Requires only 1 intervention (single-arm studies ok)
+Excludes on any single exclusion criterion
+Weight management/Obesity focus
+Default Config:
+
+Template for new reviews
+Comprehensive options for customization
+Documentation included in the file

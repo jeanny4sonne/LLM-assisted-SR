@@ -1,0 +1,11 @@
+study_id,title,true_label,reason
+1,Randomized trial of insulin glargine versus NPH insulin in type 2 diabetes,1,RCT on insulin therapy in type 2 diabetes
+2,Observational study of diabetes management in elderly patients,0,Observational study, not RCT
+3,Efficacy and safety of semaglutide in obesity without diabetes,0,Non-diabetic population
+4,Systematic review of GLP-1 receptor agonists for cardiovascular outcomes,0,Systematic review, not primary study
+5,Animal study of novel insulin analogue in mice,0,Animal study
+6,Cost-effectiveness analysis of insulin pumps,0,Economic study, not efficacy
+7,Dulaglutide versus liraglutide in type 2 diabetes: a network meta-analysis,0,Meta-analysis, not primary study
+8,Case report: Severe hypoglycemia with insulin degludec,0,Case report
+9,Long-term outcomes of basal insulin therapy: 5-year follow-up,0,Observational study
+10,Study protocol: SMART insulin delivery system trial,0,Protocol only, no results

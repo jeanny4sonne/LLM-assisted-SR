@@ -1,0 +1,177 @@
+.
+├── config
+│   ├── default_config.yaml
+│   ├── glp1_config.yaml
+│   ├── info_human_logic.txt
+│   ├── insulin_config.yaml
+│   ├── logging.yaml
+│   ├── matching.yaml
+│   └── validation.yaml
+├── data
+│   ├── input
+│   │   ├── glp1_review
+│   │   │   ├── GLP1_all.ris
+│   │   │   ├── glp1_total_covidence.csv
+│   │   │   └── included_covidence.csv
+│   │   ├── insulin_review
+│   │   │   ├── included_covidence.csv
+│   │   │   ├── insulin_total_covidence.csv
+│   │   │   ├── screening_decisions_insulin_FIXED.csv
+│   │   │   ├── screening_results.csv
+│   │   │   ├── screening_summary_FIXED.json
+│   │   │   └── short_acting_insulin_all.ris
+│   │   └── .DS_Store
+│   ├── output
+│   │   ├── comparison
+│   │   │   ├── comparison_results_20251205_105650.json
+│   │   │   ├── comparison_results_20251205_105712.json
+│   │   │   ├── comparison_results_20251205_110235.json
+│   │   │   ├── comparison_results_20251205_121727.json
+│   │   │   ├── comparison_results_20251205_121746.json
+│   │   │   ├── comparison_results_20251205_121812.json
+│   │   │   ├── comparison_results_20251205_122406.json
+│   │   │   └── comparison_results_20251205_134136.json
+│   │   ├── glp1_review
+│   │   │   ├── excluded_duration.ris
+│   │   │   ├── excluded_intervention.ris
+│   │   │   ├── excluded_population.ris
+│   │   │   ├── excluded_study_design.ris
+│   │   │   ├── included_studies.ris
+│   │   │   ├── output_compare.txt
+│   │   │   ├── output_screening.txt
+│   │   │   ├── screening_decisions_comprehensive.csv
+│   │   │   ├── screening_decisions_unknown.csv
+│   │   │   ├── screening_summary.json
+│   │   │   └── uncertain_studies.ris
+│   │   ├── insulin_glp1_performance
+│   │   │   ├── output_performance.txt
+│   │   │   ├── performance_accession_doi_only_glp-1_receptor_agonists.png
+│   │   │   └── performance_accession_doi_only_insulin_analogues.png
+│   │   ├── insulin_review
+│   │   │   ├── comparison
+│   │   │   │   ├── comparison_results_20251205_133335.json
+│   │   │   │   └── comparison_results_20251205_134052.json
+│   │   │   ├── performance
+│   │   │   │   ├── performance_results_20251205_133336.json
+│   │   │   │   ├── performance_results_20251205_134054.json
+│   │   │   │   ├── performance_results_20251205_134555.json
+│   │   │   │   ├── performance_summary_20251205_134054.csv
+│   │   │   │   └── performance_summary_20251205_134555.csv
+│   │   │   ├── exclude_duration_studies.ris
+│   │   │   ├── exclude_intervention_studies.ris
+│   │   │   ├── exclude_population_studies.ris
+│   │   │   ├── exclude_study_design_studies.ris
+│   │   │   ├── include_studies.ris
+│   │   │   ├── maybe_studies.ris
+│   │   │   ├── output_comparison.txt
+│   │   │   ├── output_screening.txt
+│   │   │   ├── screening_decisions2.csv
+│   │   │   ├── screening_decisions_insulin_analogues.csv
+│   │   │   ├── screening_decisions_unknown.csv
+│   │   │   └── screening_summary.json
+│   │   ├── insulin_review_pipeline_20251205_135153
+│   │   │   ├── data
+│   │   │   │   └── output
+│   │   │   ├── screening_decisions_simple.csv
+│   │   │   └── screening_summary_fixed.json
+│   │   ├── performance
+│   │   │   ├── performance_results_20251205_105653.json
+│   │   │   ├── performance_results_20251205_105713.json
+│   │   │   ├── performance_results_20251205_121729.json
+│   │   │   ├── performance_results_20251205_121813.json
+│   │   │   ├── performance_results_20251205_122408.json
+│   │   │   ├── performance_results_20251205_134139.json
+│   │   │   └── performance_summary_20251205_134139.csv
+│   │   └── .DS_Store
+│   └── .DS_Store
+├── docs
+│   ├── api_documentation.md
+│   ├── architecture_diagram1.png
+│   ├── index.md
+│   ├── output1.txt
+│   ├── performance_accession_doi_only_glp-1_receptor_agonists1.png
+│   ├── performance_accession_doi_only_insulin_analogues1.png
+│   ├── proposal_draft.md
+│   ├── user_guide.md
+│   └── validation_report.md
+├── export_from_covidence
+│   ├── included_covidence.csv
+│   ├── insulin_excluded_covidence.csv
+│   └── insulin_irrelevant_covidence.csv
+├── notebooks
+│   ├── templates
+│   │   └── analysis_template.ipynb
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_screening_demo.ipynb
+│   ├── 03_comparison_analysis.ipynb
+│   └── 04_performance_visualization.ipynb
+├── sample_data
+│   ├── README_sample.md
+│   ├── expected_performance.json
+│   ├── sample.ris
+│   ├── sample_ai_screening.csv
+│   └── sample_gold_standard.csv
+├── scripts
+│   ├── clean_outputs.py
+│   ├── run.py
+│   ├── run1_screen_insulin_fixed.py
+│   ├── run1_screening.py
+│   ├── run2_comparison.py
+│   ├── run2_comparison_old.py
+│   ├── run3_performance.py
+│   ├── run3_performance_old.py
+│   ├── run_insulin_pipeline.py
+│   └── setup.py
+├── src
+│   ├── __pycache__
+│   │   └── __init__.cpython-313.pyc
+│   ├── comparison
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-313.pyc
+│   │   │   └── comparison.cpython-313.pyc
+│   │   ├── __init__.py
+│   │   └── comparison.py
+│   ├── performance
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-313.pyc
+│   │   │   └── performance.cpython-313.pyc
+│   │   ├── __init__.py
+│   │   └── performance.py
+│   ├── screening
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-313.pyc
+│   │   │   └── screening.cpython-313.pyc
+│   │   ├── __init__.py
+│   │   └── screening.py
+│   └── __init__.py
+├── tests
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── conftest.cpython-313-pytest-9.0.1.pyc
+│   │   ├── test_comparison.cpython-313-pytest-9.0.1.pyc
+│   │   ├── test_performance.cpython-313-pytest-9.0.1.pyc
+│   │   └── test_screening.cpython-313-pytest-9.0.1.pyc
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── test_comparison.py
+│   ├── test_performance.py
+│   └── test_screening.py
+├── web_interface
+│   ├── demo.gif
+│   ├── index.html
+│   └── instructions.md
+├── .DS_Store
+├── .gitignore
+├── LICENSE
+├── README.md
+├── accession_matches_detailed.csv
+├── check_environment.py
+├── generate_report.py
+├── project_structure.txt
+├── pyproject.toml
+├── requirements.txt
+├── run_all_reviews.py
+├── setup.py
+└── show_structure.py
+
+34 directories, 141 files

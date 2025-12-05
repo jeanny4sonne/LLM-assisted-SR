@@ -1,0 +1,276 @@
+# GLP-1 Receptor Agonists Review Configuration
+review_name: "GLP-1 Receptor Agonists for adults with overweight or obesity"
+
+# Inclusion Criteria
+inclusion:
+  population:
+    terms:
+      - "adult"
+      - "obesity"
+      - "obese"
+      - "overweight"
+      - "prediabetes"
+      - "metabolic syndrome"
+      - "NASH"
+      - "non-alcoholic steatohepatitis"
+      - "abdominal fat"
+      - "aged 18 years"
+      - "BMI of 25"
+      - "BMI ≥ 25"
+      - "BMI ≥ 30"
+      - "body mass index ≥25"
+      - "body mass index ≥30"
+      - "waist circumference"
+      - "central obesity"
+    logic: "any"
+    
+  intervention:
+    terms:
+      - "liraglutide"
+      - "saxenda"
+      - "victoza"
+      - "semaglutide"
+      - "wegovy"
+      - "ozempic"
+      - "rybelsus"
+      - "tirzepatide"
+      - "mounjaro"
+      - "zepbound"
+      - "LY3298176"
+      - "glp-1 receptor agonist"
+      - "glp-1 ra"
+      - "glucagon-like peptide-1"
+      - "glp1"
+      - "glp 1"
+    comparator_required: false
+    min_interventions: 1
+    logic: "any"
+    
+  study_design:
+    terms:
+      - "randomized"
+      - "randomised"
+      - "rct"
+      - "randomised controlled trial"
+      - "clinical trial"
+      - "controlled trial"
+      - "parallel"
+      - "double-blind"
+      - "double blind"
+      - "placebo-controlled"
+    logic: "any"
+
+# Exclusion Criteria
+exclusion:
+  population:
+    terms:
+      - "child"
+      - "children"
+      - "adolescent"
+      - "youth"
+      - "pediatric"
+      - "paediatric"
+      - "adolescents"
+      - "teenager"
+      - "teenagers"
+    logic: "any"
+    
+  intervention:
+    terms:
+      - "bariatric surgery"
+      - "gastric bypass"
+      - "sleeve gastrectomy"
+      - "gastric band"
+      - "exenatide"
+      - "byetta"
+      - "bydureon"
+      - "dulaglutide"
+      - "trulicity"
+      - "dpp-4"
+      - "dipeptidyl peptidase-4"
+      - "gliptin"
+      - "sitagliptin"
+      - "linagliptin"
+      - "saxagliptin"
+      - "alogliptin"
+      - "vildagliptin"
+      - "teneligliptin"
+      - "sglt2"
+      - "gliflozin"
+      - "flozin"
+      - "empagliflozin"
+      - "dapagliflozin"
+      - "canagliflozin"
+      - "ertugliflozin"
+      - "bexagliflozin"
+      - "sotagliflozin"
+      - "insulin"
+      - "metformin"
+      - "orlistat"
+      - "phentermine"
+      - "topiramate"
+      - "bupropion"
+      - "naltrexone"
+    logic: "any"
+    
+  study_design:
+    terms:
+      - "this review"
+      - "systematic review"
+      - "meta-analysis"
+      - "meta-regression"
+      - "observational"
+      - "case-control"
+      - "cross-sectional"
+      - "crossover"
+      - "cross-over"
+      - "cost-effectiveness analysis"
+      - "quasi-experimental"
+      - "narrative review"
+      - "literature review"
+      - "scoping review"
+    logic: "any"
+    
+  exclusion_logic: "any"  # GLP-1 review excludes on any single exclusion
+  exclusion_threshold: 1
+
+# Duration Requirements
+duration:
+  minimum_days: 180
+  long_term_indicators:
+    - "long-term"
+    - "long term"
+    - "24 weeks"
+    - "week 24"
+    - "24-week"
+    - "26 weeks"
+    - "26-week"
+    - "week 26"
+    - "52 weeks"
+    - "52-week"
+    - "week 52"
+    - "6 months"
+    - "6-month"
+    - "12 months"
+    - "12-month"
+    - "1 year"
+    - "18 months"
+    - "18-month"
+    - "2 years"
+    - "3 years"
+    - "104 weeks"
+    - "104-week"
+  short_term_indicators:
+    - "pharmacokinetic"
+    - "pharmacodynamic"
+    - "minutes"
+    - "hour"
+    - "hours"
+    - "days"
+    - "7-day"
+    - "1 week"
+    - "2 weeks"
+    - "2-week"
+    - "4 weeks"
+    - "4-week"
+    - "8 weeks"
+    - "8-week"
+    - "12 weeks"
+    - "12-week"
+    - "16 weeks"
+    - "16-week"
+    - "20 weeks"
+    - "20-week"
+    - "short-term"
+    - "short term"
+    - "acute"
+
+# Additional Screening Rules
+rules:
+  # Intervention-specific rules
+  require_baseline_bmi: false
+  minimum_sample_size: 10
+  require_weight_outcome: true
+  
+  # Text matching options
+  case_sensitive: false
+  match_whole_words: false
+  use_regex: false
+  
+  # Decision logic
+  treat_maybe_as_include: false  # For performance calculation
+  confidence_threshold: 0.7
+
+# Output Configuration
+output:
+  save_ris_by_category: true
+  save_comprehensive_csv: true
+  generate_summary: true
+  include_metadata: true
+  encoding: "utf-8"
+  include_reason_details: true
+  compress_output: false
+  
+  # CSV columns to include
+  columns:
+    - "Title"
+    - "Authors"
+    - "Abstract"
+    - "Published_Year"
+    - "Journal"
+    - "DOI"
+    - "Accession_Number"
+    - "Decision"
+    - "Reason"
+    - "Keywords"
+    - "Study_Type"
+    - "URL"
+    
+  # RIS output options
+  ris_include_abstract: true
+  ris_include_keywords: true
+  ris_include_url: true
+
+# Performance Calculation
+performance:
+  matching_strategy: "accession_doi"  # accession_doi, doi_only, accession_only
+  gold_standard: "covidence"  # covidence, manual, consensus
+  treat_maybe_as: "positive"  # positive, negative, exclude
+  
+  # Metrics to calculate
+  calculate_sensitivity: true
+  calculate_specificity: true
+  calculate_precision: true
+  calculate_f1: true
+  calculate_cohens_kappa: true
+  
+  # Visualization
+  generate_plots: true
+  plot_style: "seaborn"
+  color_palette: "Set2"
+  
+  # Report options
+  generate_html_report: false
+  generate_pdf_report: false
+  include_confusion_matrix: true
+  include_roc_curve: false
+
+# Metadata
+metadata:
+  review_type: "intervention"
+  pico:
+    population: "Adults with overweight or obesity"
+    intervention: "GLP-1 receptor agonists"
+    comparator: "Placebo or other active comparators"
+    outcome: "Weight loss, BMI reduction, safety outcomes"
+  protocol_id: "PROTOCOL_ID_HERE"
+  registration_date: "2024-01-01"
+  last_updated: "2024-12-04"
+  version: "1.0"
+  authors:
+    - "Your Name"
+    - "Co-author Name"
+  institutions:
+    - "Your Institution"
+  funding: "Funding source"
+  conflicts: "None declared"

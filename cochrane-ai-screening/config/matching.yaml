@@ -1,0 +1,93 @@
+# Matching Strategies Configuration
+
+strategies:
+  accession_doi:
+    name: "Accession Number or DOI"
+    description: "Match using Accession Number (priority) or DOI"
+    priority: 1
+    enabled: true
+    
+    # Priority order
+    priority_order:
+      - "accession_number"
+      - "doi"
+      
+    # Cleaning rules for each identifier type
+    cleaning:
+      accession_number:
+        remove_prefixes: ["accession", "acc", "id", "number", "no"]
+        remove_suffixes: []
+        remove_spaces: true
+        lowercase: true
+        min_length: 3
+        
+      doi:
+        remove_prefixes: ["doi:", "https://doi.org/", "http://doi.org/", "https://dx.doi.org/"]
+        remove_suffixes: []
+        remove_spaces: true
+        lowercase: true
+        min_length: 5
+        
+  doi_only:
+    name: "DOI Only"
+    description: "Match using DOI only"
+    priority: 2
+    enabled: true
+    
+  accession_only:
+    name: "Accession Number Only"
+    description: "Match using Accession Number only"
+    priority: 3
+    enabled: true
+    
+  title_author_year:
+    name: "Title + First Author + Year"
+    description: "Match using combination of title, first author, and year"
+    priority: 4
+    enabled: false
+    
+    # Similarity thresholds
+    thresholds:
+      title_similarity: 0.8
+      author_similarity: 0.9
+      year_tolerance: 1
+      
+    # Text processing
+    text_processing:
+      title:
+        remove_punctuation: true
+        remove_stopwords: true
+        lowercase: true
+        strip_accents: true
+        
+      author:
+        keep_first_author_only: true
+        remove_initials: true
+        normalize_names: true
+
+# Fallback options
+fallback:
+  enable_fallback: true
+  fallback_order:
+    - "accession_doi"
+    - "doi_only"
+    - "accession_only"
+    - "title_author_year"
+    
+# Matching thresholds
+thresholds:
+  exact_match: true
+  allow_fuzzy_matching: false
+  fuzzy_threshold: 0.85
+  
+# Output options
+output:
+  include_match_details: true
+  include_match_score: false
+  include_matching_strategy: true
+  
+# Validation
+validation:
+  validate_matches: true
+  require_confirmation: false
+  manual_review_threshold: 0.7

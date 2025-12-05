@@ -1,0 +1,45 @@
+# Data validation rules
+data:
+  ris:
+    required_tags:
+      - "TI"  # Title
+      - "AB"  # Abstract
+      - "AU"  # Author
+    optional_tags:
+      - "DO"  # DOI
+      - "PY"  # Year
+      - "KW"  # Keywords
+  
+  csv:
+    required_columns:
+      - "title"
+      - "abstract"
+      - "included"
+    column_types:
+      title: string
+      abstract: string
+      included: integer
+
+# Model configuration validation
+models:
+  screening:
+    supported_models:
+      - "bert-base-uncased"
+      - "scibert"
+      - "pubmedbert"
+    min_training_samples: 50
+    default_threshold: 0.5
+  
+  comparison:
+    metrics:
+      required: ["accuracy", "precision", "recall", "f1", "roc_auc"]
+      thresholds:
+        min_accuracy: 0.7
+        min_f1: 0.6
+
+# Performance validation
+performance:
+  bootstrap_iterations: 1000
+  confidence_level: 0.95
+  save_plots: true
+  plot_formats: ["png", "svg"]

@@ -1,0 +1,149 @@
+# Insulin Analogues Review Configuration
+review_name: "Ultra-short-acting Insulin Analogues for Adults with Type 1 Diabetes"
+
+# Inclusion Criteria
+inclusion:
+  population:
+    terms:
+      - "type 1 diabetes"
+      - "type-1 diabetic"
+      - "t1d"
+      - "type 1 dm"
+      - "diabetes mellitus type 1"
+      - "adult"
+    logic: "any"  # any, all, at_least_n
+    
+  intervention:
+    terms:
+      - "insulin aspart"
+      - "novorapid"
+      - "novolog"
+      - "insulin lispro"
+      - "humalog"
+      - "insulin glulisine"
+      - "apidra"
+      - "fiasp"
+      - "fast-acting insulin aspart"
+      - "faster aspart"
+      - "ultra-rapid aspart"
+      - "lymjev"
+      - "ultra-rapid lispro"
+      - "ultra rapid lispro"
+      - "urli"
+      - "LY900014"
+      - "regular human insulin"
+      - "rhi"
+      - "regular insulin"
+      - "humulin r"
+      - "novolin r"
+    comparator_required: true
+    min_interventions: 2
+    logic: "at_least_n"
+    
+  study_design:
+    terms:
+      - "randomized"
+      - "randomised"
+      - "rct"
+      - "randomised controlled trial"
+      - "clinical trial"
+      - "controlled trial"
+    logic: "any"
+
+# Exclusion Criteria
+exclusion:
+  population:
+    terms:
+      - "type 2 diabetes"
+      - "t2d"
+      - "type 2 dm"
+      - "gestational diabetes"
+      - "gdm"
+      - "pregnant women"
+      - "pregnant females"
+      - "children"
+      - "pediatric"
+      - "MODY"
+      - "LADA"
+    logic: "any"
+    
+  intervention:
+    terms:
+      - "inhaled insulin"
+      - "inhaled technosphere insulin"
+      - "Afrezza"
+      - "insulin pump"
+      - "closed loop"
+      - "closed-loop"
+      - "open loop"
+      - "open-loop"
+      - "artificial pancreas"
+      - "continuous subcutaneous insulin infusion"
+      - "CSII"
+      - "intraveneous insulin"
+      - "premixed"
+      - "biphasic"
+      - "intermediate-acting insulin"
+    logic: "any"
+    
+  study_design:
+    terms:
+      - "systematic review"
+      - "observational study"
+      - "observational trial"
+      - "meta-analysis"
+    logic: "any"
+    
+  exclusion_logic: "count"  # count, any, all
+  exclusion_threshold: 2    # Exclude if >=2 exclusion criteria met
+
+# Duration Requirements
+duration:
+  minimum_days: 180
+  long_term_indicators:
+    - "24 weeks"
+    - "week 24"
+    - "24-week"
+    - "26 weeks"
+    - "26-week"
+    - "week 26"
+    - "52 weeks"
+    - "52-week"
+    - "week 52"
+    - "6 months"
+    - "6-month"
+    - "12 months"
+    - "12-month"
+    - "1 year"
+    - "18 months"
+    - "18-month"
+    - "2 years"
+  short_term_indicators:
+    - "short-term"
+    - "short term"
+    - "acute"
+    - "pharmacokinetic"
+    - "pharmacodynamic"
+    - "minute"
+    - "hour"
+    - "days"
+    - "7-day"
+    - "1 week"
+    - "2 weeks"
+    - "2-week"
+    - "4 weeks"
+    - "4-week"
+    - "12 weeks"
+    - "12-week"
+    - "16 weeks"
+    - "16-week"
+    - "20 weeks"
+    - "20-week"
+
+# Output Configuration
+output:
+  save_ris_by_category: true
+  save_comprehensive_csv: true
+  generate_summary: true
+  include_metadata: true
+  encoding: "utf-8"

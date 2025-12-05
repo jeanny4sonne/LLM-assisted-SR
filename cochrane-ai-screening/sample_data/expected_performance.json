@@ -1,0 +1,12 @@
+{
+  "sensitivity": 100.0,
+  "specificity": 100.0,
+  "accuracy": 100.0,
+  "precision": 100.0,
+  "f1_score": 100.0,
+  "workload_reduction": 90.0,
+  "time_saved_hours": 9.0,
+  "total_studies": 10,
+  "included_studies": 1,
+  "excluded_studies": 9
+}
