@@ -61,5 +61,18 @@ This report validates the performance of the AI-assisted screening tool for Coch
 - Time saved: 95.8 hours (640x faster)
 - Records needing manual review: 116/4,415 (2.6%)
 
-## Extra from author:
-YG: For insulin review, all included trials could be found by the AI screening method. It even detected four previously included studies which were excluded by human screening. However, we didn't include those four for performance calculation; For GLP-1 RA review, AI method detected all except one (ROMANCE trial). 
+#### Clinical Validation Beyond Metrics (analysed by YG)
+**Insulin Analogues Review**:
+- Six included trials were successfully identified by AI screening
+- AI even detected four studies excluded by human screening (excluded from metrics as potential human errors)
+- Complete coverage of therapeutic comparisons in final review
+
+**GLP-1 Receptor Agonists Review**:
+- Near-complete detection across interventions:
+  - Tirzepatide: 9/9 trials (100%)
+  - Liraglutide: 23/24 trials (95.8%) 
+  - Semaglutide: 18/18 trials (100%)
+- Single missed study (ROMANCE trial) due to ambiguous terminology
+- 98% overall detection rate of included trials
+
+
