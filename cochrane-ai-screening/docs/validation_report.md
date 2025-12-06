@@ -62,4 +62,4 @@ This report validates the performance of the AI-assisted screening tool for Coch
 - Records needing manual review: 116/4,415 (2.6%)
 
 ## Extra from author:
-YG: For insulin review, all included studies had primary references, which were found in AI screening method. It even detected the four studies excluded by human screening and we didn't include those four for performance metrics; For GLP-1 RA review, tirzepatide had 9 included studies, liraglutide had 24 included studies, semaglutide had 18 included studies. Except one record (ROMANCE trial) being not found, AI method detected all the primary refereces. 
+YG: For insulin review, all included trials could be found by the AI screening method. It even detected four previously included studies which were excluded by human screening. However, we didn't include those four for performance calculation; For GLP-1 RA review, AI method detected all except one (ROMANCE trial). 
