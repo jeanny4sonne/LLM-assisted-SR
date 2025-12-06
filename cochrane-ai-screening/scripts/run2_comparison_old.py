@@ -1,4 +1,4 @@
-# cd /Volumes/Yang/AI_test/code_for_screening/deepseek_screen/LLM-assisted-SR/cochrane-ai-screening
+# cd /Volumes/Yang/AI_test/LLM-assisted-SR/cochrane-ai-screening
 # 
 
 # !/usr/bin/env python3

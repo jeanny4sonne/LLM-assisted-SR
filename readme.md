@@ -18,6 +18,12 @@ AI-assisted title/abstract screening for Cochrane systematic reviews.
 - **Configuration management**: YAML configs for different reviews
 - **Reproducible**: Sample data included for testing
 
+### 2. Future Extensions (`future-tools/`)
+**Status: 🔨 In Development**
+- Data extraction from PDFs
+- Risk of bias assessment (RoB 2.0)
+- GRADE certainty assessment
+
 #### Quick Start:
 ```bash
 cd cochrane-ai-screening

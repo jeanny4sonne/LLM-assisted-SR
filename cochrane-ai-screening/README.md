@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 
-An AI-powered tool for accelerating title/abstract screening in systematic reviews, validated on Cochrane diabetes reviews.
+An AI-powered tool for accelerating title/abstract screening in systematic reviews, validated on two Cochrane reviews.
 
 ## 📊 Validation Results
 
@@ -22,7 +22,7 @@ An AI-powered tool for accelerating title/abstract screening in systematic revie
 ### For Developers:
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/cochrane-ai-screening.git
+git clone https://github.com/jeanny4sonne/cochrane-ai-screening.git
 cd cochrane-ai-screening
 
 # Install requirements
@@ -49,3 +49,8 @@ python code/performance_calculator.py \
 # 4. Or use the test script
 cd data/sample_data
 ./test_workflow_fixed.sh
+
+## Acknowledgement
+**Data Sharing**: We thank the Cochrane Evidence Synthesis Subunit Düsseldorf at Heinrich-Heine University Düsseldorf for providing access to completed systematic review datasets on GLP-1 receptor agonists (Articles with the following doi: 10.1002/14651858.CD016018; 10.1002/14651858.CD016017.; 10.1002/14651858.CD015092.pub2) and ultra-short-acting insulin analogues (unpublished). These datasets served as the gold standard for validating our AI screening tool. For data access requests, please contact guoyang2010@outlook.com.
+
+**AI Tools**: AI screening was implemented using deepseek, ChatGPT, Gemini. The tool leverages large language models to simulate human screening decisions based on study titles and abstracts.

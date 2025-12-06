@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cochrane AI Screening Tool - Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .demo-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .demo-gif {
+            max-width: 800px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🧠 Cochrane AI Screening Tool</h1>
+        <p>AI-assisted systematic review screening for Cochrane reviews</p>
+    </header>
+
+    <section>
+        <h2>🎯 Overview</h2>
+        <p>This tool automates title/abstract screening for systematic reviews using AI. It compares AI decisions with human reviewers and calculates performance metrics.</p>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h3>🤖 AI Screening</h3>
+                <p>Uses LLMs to screen studies based on PICO criteria.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Comparison</h3>
+                <p>Compares AI decisions with human reviewers (gold standard).</p>
+            </div>
+            <div class="feature-card">
+                <h3>📈 Performance Metrics</h3>
+                <p>Calculates accuracy, precision, recall, F1-score.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Visualization</h3>
+                <p>Generates performance plots and reports.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <h2>🎬 Demo</h2>
+        <p>Watch the tool in action:</p>
+        <img src="demo.gif" alt="Cochrane AI Screening Tool Demo" class="demo-gif">
+        <p><em>Demo showing: RIS file import → AI screening → Results comparison</em></p>
+    </section>
+
+    <section>
+        <h2>🚀 Quick Start</h2>
+        <ol>
+            <li><strong>Install:</strong> <code>pip install -e .</code></li>
+            <li><strong>Run screening:</strong> <code>python scripts/run1_screening.py --review sample</code></li>
+            <li><strong>Compare results:</strong> <code>python scripts/run2_comparison.py</code></li>
+            <li><strong>Evaluate performance:</strong> <code>python scripts/run3_performance.py</code></li>
+        </ol>
+        
+        <h3>Example Results</h3>
+        <p>See performance visualizations in the <code>docs/</code> directory:</p>
+        <ul>
+            <li><a href="../docs/performance_accession_doi_only_glp-1_receptor_agonists1.png">GLP-1 Review Performance</a></li>
+            <li><a href="../docs/performance_accession_doi_only_insulin_analogues1.png">Insulin Review Performance</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>📁 Project Structure</h2>
+        <pre><code>cochrane-ai-screening/
+├── src/                    # Source code
+│   ├── screening/         # AI screening module
+│   ├── comparison/        # Comparison module
+│   └── performance/       # Performance evaluation
+├── config/                # Configuration files
+├── sample_data/           # Example data
+├── scripts/               # Run scripts
+└── web_interface/         # This demo interface</code></pre>
+    </section>
+
+    <footer>
+        <p>Cochrane AI Screening Tool | MIT License | 
+           <a href="https://github.com/jeanny4sonne/LLM-assisted-SR">GitHub Repository</a></p>
+        <p>For detailed instructions, see <a href="instructions.md">instructions.md</a></p>
+    </footer>
+</body>
+</html>

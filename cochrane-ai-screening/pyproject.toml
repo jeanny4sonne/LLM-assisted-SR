@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "AI-assisted systematic review screening tool"
 readme = "README.md"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"},
+    {name = "Yang Guo", email = "guoyang2010@outlook.com"},
 ]
 license = {text = "MIT"}
 classifiers = [
@@ -54,9 +54,9 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/cochrane-ai-screening"
-Repository = "https://github.com/yourusername/cochrane-ai-screening"
-Issues = "https://github.com/yourusername/cochrane-ai-screening/issues"
+Homepage = "https://github.com/jeanny4sonne/cochrane-ai-screening"
+Repository = "https://github.com/jeanny4sonne/cochrane-ai-screening"
+Issues = "https://github.com/jeanny4sonne/cochrane-ai-screening/issues"
 
 [project.scripts]
 cochrane-screen = "cochrane_screening.cli:main"
