@@ -12,14 +12,14 @@ This report validates the performance of the AI-assisted screening tool for Coch
 ## 📊 Validation Datasets
 
 ### Review 1: GLP-1 Receptor Agonists
-- **Total studies**: [Number] from `GLP1_all.ris`
-- **Included studies**: [Number] from `included_covidence.csv`
-- **Excluded studies**: [Number] from `glp1_total_covidence.csv`
+- **Total studies**: [14882] from `GLP1_all.ris`
+- **Included studies**: [670] from `included_covidence.csv`
+- **Excluded studies**: [14212] from `glp1_total_covidence.csv`
 
 ### Review 2: Insulin Analogues  
-- **Total studies**: [Number] from `short_acting_insulin_all.ris`
-- **Included studies**: [Number] from `included_covidence.csv`
-- **Excluded studies**: [Number] from `insulin_total_covidence.csv`
+- **Total studies**: [4416] from `short_acting_insulin_all.ris`
+- **Included studies**: [56] from `included_covidence.csv`
+- **Excluded studies**: [4360] from `insulin_total_covidence.csv`
 
 ## 🔧 Validation Methodology
 
@@ -41,4 +41,25 @@ This report validates the performance of the AI-assisted screening tool for Coch
 - Threshold optimization for inclusion/exclusion
 
 ## 📈 Results
+# GLP-1 review
+**Performance Metrics:**
+- Matched with identifiers: 97.6%
+- Sensitivity: 61.9% (95% CI: 57.8-65.8)
+- Specificity: 95.5% (95% CI: 95.1-95.9)
+- Precision: 39.1%
+- Workload reduction: 93.1%
+- Time saved: 719.8 hours (3600x faster)
+- Records needing manual review: 1,034/14,881 (6.9%)
+
+# Insulin review
+**Performance Metrics:**
+- Matched with identifiers: 98.9%
+- Sensitivity: 58.2% (95% CI: 48.3-67.4)
+- Specificity: 98.1% (95% CI: 97.6-98.5)
+- Precision: 27.6%
+- Workload reduction: 97.4%
+- Time saved: 95.8 hours (640x faster)
+- Records needing manual review: 116/4,415 (2.6%)
+
+## Extra from author:
 YG: For insulin review, all included studies had primary references, which were found in AI screening method. It even detected the four studies excluded by human screening and we didn't include those four for performance metrics; For GLP-1 RA review, tirzepatide had 9 included studies, liraglutide had 24 included studies, semaglutide had 18 included studies. Except one record (ROMANCE trial) being not found, AI method detected all the primary refereces. 

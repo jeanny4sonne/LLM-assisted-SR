@@ -9,8 +9,8 @@ An AI-powered tool for accelerating title/abstract screening in systematic revie
 
 | Review | Sensitivity | Specificity | Workload Reduction | Time Saved |
 |--------|-------------|-------------|-------------------|------------|
-| Insulin Analogues | 92.3% | 85.7% | 74% | 95.8 hours |
-| GLP-1 Receptor Agonists | 91.8% | 84.2% | 72% | 239.8 hours |
+| Insulin Analogues | 58.2% | 98.1% | 97.4% | 95.8 hours |
+| GLP-1 Receptor Agonists | 61.9% | 95.5% | 93.1% | 719.8 hours |
 
 ## 🚀 Quick Start
 
